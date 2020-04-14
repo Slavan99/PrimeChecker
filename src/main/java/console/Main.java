@@ -21,19 +21,31 @@ public class Main {
             System.out.println("Число должно быть не меньше 3!");
             System.exit(0);
         }
-        AddToQueueThread addToQueueThread = new AddToQueueThread(number);
-        TrialDivisionThread trialDivisionThread1 = new TrialDivisionThread(number);
-        trialDivisionThread1.setName("Рабочий поток 1");
-        TrialDivisionThread trialDivisionThread2 = new TrialDivisionThread(number);
-        trialDivisionThread2.setName("Рабочий поток 2");
-        addToQueueThread.start();
-        trialDivisionThread1.start();
-        trialDivisionThread2.start();
-        trialDivisionThread1.join();
-        trialDivisionThread2.join();
-        if(isPrime)
-            System.out.println("Число простое");
-        else
-            System.out.println("Число не простое! Его минимальный делитель: " + minDenominator);
+        System.out.println("Каким алгоритмом проверить число на простоту? 1 - тест Ферма, 2 - перебор делителей");
+        String option = scanner.next();
+        if("1".equals(option)) {
+            FermatChecker fermatChecker = new FermatChecker();
+            fermatChecker.isPrimeNumber(number);
+            if(!Main.isPrime)
+                System.out.println("Число составное");
+            else
+                System.out.println("Число вероятно простое");
+        }
+        else if("2".equals(option)) {
+            AddToQueueThread addToQueueThread = new AddToQueueThread(number);
+            TrialDivisionThread trialDivisionThread1 = new TrialDivisionThread(number);
+            trialDivisionThread1.setName("Рабочий поток 1");
+            TrialDivisionThread trialDivisionThread2 = new TrialDivisionThread(number);
+            trialDivisionThread2.setName("Рабочий поток 2");
+            addToQueueThread.start();
+            trialDivisionThread1.start();
+            trialDivisionThread2.start();
+            trialDivisionThread1.join();
+            trialDivisionThread2.join();
+            if (isPrime)
+                System.out.println("Число простое");
+            else
+                System.out.println("Число не простое! Его минимальный делитель: " + minDenominator);
+        }
     }
 }
