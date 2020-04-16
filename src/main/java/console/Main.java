@@ -21,12 +21,13 @@ public class Main {
             System.out.println("Число должно быть не меньше 3!");
             System.exit(0);
         }
-        System.out.println("Каким алгоритмом проверить число на простоту? 1 - тест Ферма, 2 - перебор делителей");
+        System.out.println("Каким алгоритмом проверить число на простоту? 1 - тест Ферма, 2 - перебор делителей" +
+                ", 3 - тест Соловея-Штрассена, 4 - тест Миллера-Рабина");
         String option = scanner.next();
         if("1".equals(option)) {
             FermatChecker fermatChecker = new FermatChecker();
             fermatChecker.isPrimeNumber(number);
-            if(!Main.isPrime)
+            if(!isPrime)
                 System.out.println("Число составное");
             else
                 System.out.println("Число вероятно простое");
@@ -47,5 +48,23 @@ public class Main {
             else
                 System.out.println("Число не простое! Его минимальный делитель: " + minDenominator);
         }
+        else if("3".equals(option)){
+            SolovayStrassenChecker solovayStrassenChecker = new SolovayStrassenChecker();
+            solovayStrassenChecker.isPrimeNumber(number);
+            if(!isPrime)
+                System.out.println("Число составное");
+            else
+                System.out.println("Число вероятно простое");
+        }
+        else if("4".equals(option)){
+            MillerRabinChecker millerRabinChecker = new MillerRabinChecker();
+            millerRabinChecker.isPrimeNumber(number);
+            if(!isPrime)
+                System.out.println("Число составное");
+            else
+                System.out.println("Число вероятно простое");
+        }
+        else
+            System.out.println("Неправильный ввод");
     }
 }
