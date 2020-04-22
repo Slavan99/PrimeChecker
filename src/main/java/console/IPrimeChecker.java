@@ -1,5 +1,5 @@
 package console;
 
-public interface PrimeNumber {
-    public void isPrimeNumber(Long n);
+public interface IPrimeChecker {
+    boolean isPrimeNumber(Long n, int iter);
 }

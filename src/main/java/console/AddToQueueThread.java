@@ -2,9 +2,9 @@ package console;
 
 
 public class AddToQueueThread extends Thread{
-    Integer numberToCheck;
+    Long numberToCheck;
 
-    public AddToQueueThread(Integer numberToCheck){
+    public AddToQueueThread(Long numberToCheck){
         this.numberToCheck = numberToCheck;
     }
     public void run() {

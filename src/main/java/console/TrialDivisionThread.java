@@ -1,18 +1,18 @@
+/*
 package console;
 
-public class TrialDivisionThread extends Thread implements PrimeNumber {
-    Integer numberToCheck;
+public class TrialDivisionThread extends Thread implements IPrimeChecker {
+    Long numberToCheck;
 
-    public TrialDivisionThread(Integer numberToCheck){
+    public TrialDivisionThread(Long numberToCheck){
         this.numberToCheck = numberToCheck;
     }
     public synchronized void run() {
-        isPrimeNumber(numberToCheck);
-
+        isPrimeNumber(numberToCheck, 0);
     }
 
     @Override
-    public void isPrimeNumber(Integer number) {
+    public boolean isPrimeNumber(Long number, int iter) {
         try {
             sleep(100);
         } catch (InterruptedException e) {
@@ -26,8 +26,8 @@ public class TrialDivisionThread extends Thread implements PrimeNumber {
 
                     if (number % div == 0) {
                         Main.found = true;
-                        Main.isPrime = false;
                         Main.minDenominator = div;
+                        return false;
                     }
                 }
             } catch (InterruptedException e) {
@@ -36,7 +36,8 @@ public class TrialDivisionThread extends Thread implements PrimeNumber {
             Main.semaphore.release();
         }
         if(!Main.found) {
-            Main.isPrime = true;
+            return true;
         }
     }
 }
+*/
