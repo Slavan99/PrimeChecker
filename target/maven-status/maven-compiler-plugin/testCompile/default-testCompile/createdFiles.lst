@@ -1,0 +1,4 @@
+console\PrimeChecker\solovaystrassen\SolovayStrassenHandlerTest.class
+console\PrimeChecker\trialdivision\TrialDivisionHandlerTest.class
+console\PrimeChecker\millerrabin\MillerRabinHandlerTest.class
+console\PrimeChecker\fermat\FermatHandlerTest.class
