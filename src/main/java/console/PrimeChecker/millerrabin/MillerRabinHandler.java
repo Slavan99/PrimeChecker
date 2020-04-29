@@ -35,7 +35,7 @@ public class MillerRabinHandler implements IPrimeChecker {
     }
 
     @Override
-    public boolean isPrimeNumber(Long number, int iter) throws ExecutionException, InterruptedException {
+    public boolean isPrimeNumber(long number, int iter) throws ExecutionException, InterruptedException {
         if (number % 2 == 0) {
             return false;
         }

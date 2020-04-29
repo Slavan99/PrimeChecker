@@ -3,7 +3,7 @@ package console.PrimeChecker;
 import java.util.concurrent.ExecutionException;
 
 public interface IPrimeChecker {
-    boolean isPrimeNumber(Long n, int iter) throws ExecutionException, InterruptedException;
+    boolean isPrimeNumber(long n, int iter) throws ExecutionException, InterruptedException;
 
     default long phi (Long n) {
         long result = n;

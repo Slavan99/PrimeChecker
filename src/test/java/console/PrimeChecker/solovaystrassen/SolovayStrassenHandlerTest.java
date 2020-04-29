@@ -11,8 +11,8 @@ class SolovayStrassenHandlerTest {
     @Test
     void testIsPrimeNumberSolovayStrassen() throws ExecutionException, InterruptedException {
         SolovayStrassenHandler solovayStrassenHandler = new SolovayStrassenHandler();
-        assertTrue(solovayStrassenHandler.isPrimeNumber((long) 17, 5));
-        assertFalse(solovayStrassenHandler.isPrimeNumber((long) 901, 50));
-        assertTrue(solovayStrassenHandler.isPrimeNumber((long) 660,100));
+        assertTrue(solovayStrassenHandler.isPrimeNumber(17, 5));
+        assertFalse(solovayStrassenHandler.isPrimeNumber(901, 50));
+        assertFalse(solovayStrassenHandler.isPrimeNumber(660,100));
     }
 }

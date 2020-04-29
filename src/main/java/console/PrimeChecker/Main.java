@@ -14,7 +14,7 @@ public class Main {
         System.out.print("Введите число для проверки: ");
         Scanner scanner = new Scanner(System.in);
         try {
-            Long number = scanner.nextLong();
+            long number = scanner.nextLong();
             System.out.println("Каким алгоритмом проверить число на простоту? 1 - тест Ферма, 2 - перебор делителей" +
                     ", 3 - тест Соловея-Штрассена, 4 - тест Миллера-Рабина");
             String option = scanner.next();
